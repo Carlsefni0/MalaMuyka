@@ -8,7 +8,7 @@ PriceSettingsDialog::PriceSettingsDialog(QWidget *parent) :
     ui->setupUi(this);
 
 
-    ui->tablePrice->setColumnCount(2); // Кількість стовпців
+    ui->tablePrice->setColumnCount(2);
     ui->tablePrice->setHorizontalHeaderLabels({"Послуга", "Ціна"});
     ui->tablePrice->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tablePrice->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -35,8 +35,7 @@ void PriceSettingsDialog::addWorkTypeDataToTable(QTableWidget *table, QMap<QStri
 {
     // Очищення таблиці перед додаванням нових даних
     table->clearContents();
-    table->setRowCount(0); // Очистити рядки
-
+    table->setRowCount(0);
     // Заповнення таблиці даними з QMap
     int row = 0;
     for (auto it = mapPtr->constBegin(); it != mapPtr->constEnd(); ++it) {
